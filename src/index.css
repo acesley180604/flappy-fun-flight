@@ -2,95 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 196 100% 70%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 20% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 120 60% 40%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 200 30% 85%;
+    --muted-foreground: 220 15% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 25 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 200 30% 80%;
+    --input: 200 30% 80%;
+    --ring: 45 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Game-specific colors */
+    --sky-top: 196 100% 75%;
+    --sky-bottom: 35 100% 85%;
+    --pipe: 120 60% 35%;
+    --pipe-highlight: 120 50% 50%;
+    --pipe-shadow: 120 70% 25%;
+    --bird: 45 100% 55%;
+    --bird-dark: 30 80% 45%;
+    --ground: 35 60% 45%;
+    --ground-dark: 30 50% 35%;
+    --cloud: 0 0% 100%;
+    --score-bg: 0 0% 0% / 0.3;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Fonts */
+    --font-game: 'Press Start 2P', cursive;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 30% 15%;
+    --foreground: 0 0% 95%;
+    --card: 220 30% 20%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 30% 20%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 20% 15%;
+    --secondary: 120 60% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 25%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 25 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 45 100% 50%;
   }
 }
 
@@ -101,5 +83,75 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-game);
   }
+}
+
+@layer components {
+  .game-container {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--sky-top)) 0%,
+      hsl(var(--sky-bottom)) 100%
+    );
+  }
+
+  .game-title {
+    text-shadow: 
+      3px 3px 0 hsl(var(--bird-dark)),
+      -1px -1px 0 hsl(var(--foreground) / 0.3);
+  }
+
+  .score-display {
+    text-shadow: 
+      2px 2px 0 hsl(var(--foreground) / 0.5),
+      -1px -1px 0 hsl(var(--foreground) / 0.2);
+  }
+
+  .game-button {
+    @apply px-6 py-3 rounded-lg font-bold transition-all duration-150;
+    @apply bg-primary text-primary-foreground;
+    @apply hover:scale-105 active:scale-95;
+    @apply shadow-lg;
+    text-shadow: 1px 1px 0 hsl(var(--bird-dark) / 0.5);
+  }
+
+  .game-button:hover {
+    box-shadow: 0 6px 20px hsl(var(--primary) / 0.4);
+  }
+
+  .game-overlay {
+    background: hsl(var(--score-bg));
+    backdrop-filter: blur(4px);
+  }
+}
+
+@layer utilities {
+  .animate-flap {
+    animation: flap 0.15s ease-in-out;
+  }
+
+  .animate-float {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-score {
+    animation: pulse-score 0.3s ease-out;
+  }
+}
+
+@keyframes flap {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-20deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-score {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
 }
